@@ -22,7 +22,7 @@ public class DataRestConfig implements RepositoryRestConfigurer{
     	
     	config.exposeIdsFor(Product.class);
     	config.exposeIdsFor(Country.class);
-		
+		config.setBasePath("/api");
 		
 		
 		HttpMethod[] theunsupportmethod= {HttpMethod.DELETE, HttpMethod.POST, HttpMethod.PUT};

@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.Purchase;
@@ -11,6 +12,7 @@ import com.example.demo.service.CheckoutService;
 import lombok.extern.log4j.Log4j2;
 
 @RestController
+@RequestMapping("/api/purchase")
 @Log4j2
 public class CheckOutController {
 	
@@ -23,7 +25,7 @@ public class CheckOutController {
 	}
 	
 	
-	@PostMapping("/api/purchase")
+	@PostMapping()
 	public PurchaseResponse placeholder(@RequestBody Purchase purchase) {
 		
 		PurchaseResponse purchaseResponse = this.checkoutService.placeholder(purchase);
